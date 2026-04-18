@@ -20,14 +20,14 @@
 </head>
 <body class="bg-gray-950 text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-blue-500/30">
 
-    <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4 bg-gray-950/80 backdrop-blur-md">
-        <div class="max-w-md w-full bg-gray-900 border border-blue-500/30 rounded-[2.5rem] p-8 text-center shadow-[0_0_50px_rgba(59,130,246,0.2)]">
-            <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i data-lucide="check" class="text-blue-400 w-8 h-8"></i>
+    <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4 bg-gray-950/90 backdrop-blur-md">
+        <div class="max-w-md w-full bg-gray-900 border border-blue-500/30 rounded-[2.5rem] p-10 text-center shadow-[0_0_50px_rgba(59,130,246,0.2)]">
+            <div class="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-blue-500/30">
+                <i data-lucide="check" class="text-blue-400 w-10 h-10"></i>
             </div>
-            <h2 class="text-2xl font-medium text-white mb-2">Request Transmitted</h2>
-            <p class="text-gray-400 font-extralight mb-8">Your system initialization request has been received. I will review your brand details and reach out via email shortly.</p>
-            <a href="index.html" class="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl transition-all">Return Home</a>
+            <h2 class="text-3xl font-medium text-white mb-3 tracking-tight">Transmission Complete</h2>
+            <p class="text-gray-400 font-extralight mb-8 leading-relaxed">System initialized. I have received your brand details and will send the **PayPal / Wise** payment instructions to your inbox shortly.</p>
+            <a href="index.html" class="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl transition-all font-medium">Return to Mainframe</a>
         </div>
     </div>
 
@@ -58,50 +58,50 @@
             
             <div class="text-center mb-10">
                 <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-white mb-4">Initialize <span class="text-blue-400">Service</span></h1>
-                <p class="text-gray-400 font-extralight">Complete the form below to request your package. I will review your brand and send over the next steps and payment details.</p>
+                <p class="text-gray-400 font-extralight">Provide your details below. I will manually review your brand before sending the secure payment link.</p>
             </div>
 
-            <div class="bg-gray-950/50 p-6 md:p-8 rounded-[2rem] border border-white/5 shadow-inner">
+            <div class="bg-gray-950/50 p-6 md:p-8 rounded-[2rem] border border-white/5 shadow-inner backdrop-blur-sm">
                 <form id="order-form" action="https://formsubmit.co/ajax/friedazebaliliworks@gmail.com" method="POST" class="space-y-5">
                     
-                    <input type="hidden" name="_subject" value="New Package Order Request!">
+                    <input type="hidden" name="_subject" value="New Order: System Initialization Request">
                     <input type="hidden" name="_captcha" value="false">
 
                     <div class="grid md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1.5 ml-1">Full Name</label>
-                            <input type="text" name="name" required class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none" placeholder="John Doe">
+                            <label class="block text-xs text-gray-400 mb-1.5 ml-1 uppercase tracking-widest font-light">Full Name</label>
+                            <input type="text" name="name" required class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none placeholder-gray-700" placeholder="John Doe">
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1.5 ml-1">Email Address</label>
-                            <input type="email" name="email" required class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none" placeholder="john@example.com">
+                            <label class="block text-xs text-gray-400 mb-1.5 ml-1 uppercase tracking-widest font-light">Email Address</label>
+                            <input type="email" name="email" required class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none placeholder-gray-700" placeholder="john@example.com">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs text-gray-400 mb-1.5 ml-1">Brand / Company URL (Optional)</label>
-                        <input type="text" name="brand_url" class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none" placeholder="https://instagram.com/yourbrand">
+                        <label class="block text-xs text-gray-400 mb-1.5 ml-1 uppercase tracking-widest font-light">Brand / Company URL (Optional)</label>
+                        <input type="text" name="brand_url" class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none placeholder-gray-700" placeholder="https://instagram.com/yourbrand">
                     </div>
 
                     <div>
-                        <label class="block text-xs text-gray-400 mb-1.5 ml-1">Selected Package</label>
+                        <label class="block text-xs text-gray-400 mb-1.5 ml-1 uppercase tracking-widest font-light">Selected Package</label>
                         <div class="relative">
-                            <select id="package-select" name="package" required class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 appearance-none outline-none">
-                                <option value="" disabled selected>Select a package</option>
+                            <select id="package-select" name="package" required class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 appearance-none outline-none cursor-pointer">
+                                <option value="" disabled selected>Select a service package</option>
                                 <option value="Starter Package ($499/mo)">Starter Package ($499/mo)</option>
                                 <option value="Growth Package ($999/mo)">Growth Package ($999/mo)</option>
                                 <option value="Premium AI Package ($1,899/mo)">Premium AI Package ($1,899/mo)</option>
                             </select>
-                            <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
+                            <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none"></i>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs text-gray-400 mb-1.5 ml-1">Brand Goals & Notes</label>
-                        <textarea name="message" required rows="4" class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none resize-none" placeholder="Tell me briefly about what you want to achieve..."></textarea>
+                        <label class="block text-xs text-gray-400 mb-1.5 ml-1 uppercase tracking-widest font-light">Project Goals & Brief</label>
+                        <textarea name="message" required rows="4" class="w-full bg-[#0b101e] border border-white/5 rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-blue-500/50 outline-none resize-none placeholder-gray-700" placeholder="What are we scaling today?"></textarea>
                     </div>
 
-                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg hover:-translate-y-0.5 transition-all duration-300 py-4 rounded-xl text-base text-white flex items-center justify-center gap-2">
+                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg hover:-translate-y-0.5 transition-all duration-300 py-4 rounded-xl text-base text-white flex items-center justify-center gap-2 font-medium">
                         <span>Transmit Request</span>
                         <i data-lucide="send" class="w-5 h-5"></i>
                     </button>
@@ -116,7 +116,7 @@
     <script>
         lucide.createIcons();
 
-        // 1. URL Plan Selector
+        // 1. URL Parameter Logic
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const plan = urlParams.get('plan');
@@ -135,7 +135,7 @@
             e.preventDefault();
             submitBtn.disabled = true;
             const originalContent = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span>Processing...</span>';
+            submitBtn.innerHTML = '<span>Processing Data...</span>';
 
             const formData = new FormData(this);
 
@@ -160,12 +160,12 @@
             });
         });
 
-        // 3. Advanced Neon Cursor Trail Logic
+        // 3. SNOW PARTICLE CURSOR (Matches index.html)
         const canvas = document.getElementById('cursor-canvas');
         const ctx = canvas.getContext('2d');
         const cursor = document.getElementById('custom-cursor');
-        let points = [];
-        const maxPoints = 20;
+        let particles = [];
+        let mouse = { x: -100, y: -100 };
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
@@ -174,29 +174,51 @@
         window.dispatchEvent(new Event('resize'));
 
         window.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            points.push({ x: e.clientX, y: e.clientY });
-            if (points.length > maxPoints) points.shift();
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            cursor.style.left = mouse.x + 'px';
+            cursor.style.top = mouse.y + 'px';
+            
+            // Add particles for snow trailing effect
+            for(let i = 0; i < 3; i++) {
+                particles.push({
+                    x: mouse.x,
+                    y: mouse.y,
+                    size: Math.random() * 2.5 + 0.5,
+                    speedX: (Math.random() - 0.5) * 1.5,
+                    speedY: (Math.random() - 0.5) * 1.5 + 0.5, // slightly falling snow trajectory
+                    life: 1
+                });
+            }
         });
 
-        function animateCursor() {
+        // Click effect on cursor
+        window.addEventListener('mousedown', () => cursor.classList.add('scale-75'));
+        window.addEventListener('mouseup', () => cursor.classList.remove('scale-75'));
+
+        function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if (points.length > 1) {
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                ctx.fillStyle = `rgba(34, 211, 238, ${p.life})`;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#22d3ee';
                 ctx.beginPath();
-                ctx.moveTo(points[0].x, points[0].y);
-                for (let i = 1; i < points.length; i++) {
-                    ctx.lineTo(points[i].x, points[i].y);
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.life -= 0.03;
+                
+                if (p.life <= 0) {
+                    particles.splice(i, 1);
+                    i--;
                 }
-                ctx.strokeStyle = 'rgba(34, 211, 238, 0.3)';
-                ctx.lineWidth = 2;
-                ctx.lineCap = 'round';
-                ctx.lineJoin = 'round';
-                ctx.stroke();
             }
-            requestAnimationFrame(animateCursor);
+            requestAnimationFrame(animateParticles);
         }
-        animateCursor();
+        animateParticles();
     </script>
 </body>
 </html>
