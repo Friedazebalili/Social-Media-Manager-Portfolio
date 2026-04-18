@@ -11,6 +11,8 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #030712; }
         ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 10px; }
+        
+        /* Hide Default Cursor */
         * { cursor: none !important; }
     </style>
 </head>
@@ -38,7 +40,7 @@
                 <a href="index.html#portfolio" class="hover:text-white transition-colors">Portfolio</a>
                 <a href="index.html#pricing" class="hover:text-white transition-colors">Pricing</a>
             </div>
-            <a href="index.html#contact" class="bg-gradient-to-br from-blue-500 to-blue-700 shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),0_8px_16px_rgba(37,99,235,0.4)] hover:-translate-y-0.5 transition-all rounded-full px-5 py-2 text-base font-normal text-white hidden md:block">
+            <a href="index.html" class="bg-gradient-to-br from-blue-500 to-blue-700 shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),0_8px_16px_rgba(37,99,235,0.4)] hover:-translate-y-0.5 transition-all rounded-full px-5 py-2 text-base font-normal text-white hidden md:block">
                 Back to Home
             </a>
         </div>
@@ -56,7 +58,6 @@
                 <form action="https://formsubmit.co/friedazebaliliworks@gmail.com" method="POST" class="space-y-5">
                     
                     <input type="hidden" name="_subject" value="New Package Order Request!">
-                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html"> 
                     <input type="hidden" name="_captcha" value="false">
 
                     <div class="grid md:grid-cols-2 gap-5">
@@ -127,21 +128,21 @@
     <script>
         lucide.createIcons();
 
-        // 1. Auto-Select Package based on URL Parameter
+        // Package selection logic
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const plan = urlParams.get('plan');
             const selectBox = document.getElementById('package-select');
-
             if (plan === 'starter') selectBox.value = 'Starter Package ($499/mo)';
             if (plan === 'growth') selectBox.value = 'Growth Package ($999/mo)';
             if (plan === 'premium') selectBox.value = 'Premium AI Package ($1,899/mo)';
         });
 
-        // 2. Custom Cursor Logic
+        // Neon Blue Frost Cursor Effect
         const canvas = document.getElementById('cursor-canvas');
         const ctx = canvas.getContext('2d');
         const cursor = document.getElementById('custom-cursor');
+        let particles = [];
         let mouse = { x: -100, y: -100 };
 
         window.addEventListener('resize', () => {
@@ -155,7 +156,46 @@
             mouse.y = e.clientY;
             cursor.style.left = mouse.x + 'px';
             cursor.style.top = mouse.y + 'px';
+            
+            // Create frost particles
+            for(let i = 0; i < 2; i++) {
+                particles.push({
+                    x: mouse.x,
+                    y: mouse.y,
+                    size: Math.random() * 2 + 0.5,
+                    speedX: (Math.random() - 0.5) * 1.5,
+                    speedY: Math.random() * 1.5 + 0.5, // Falling speed
+                    life: 1,
+                    opacity: Math.random() * 0.5 + 0.5
+                });
+            }
         });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                ctx.fillStyle = `rgba(34, 211, 238, ${p.life})`; // Neon blue match
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#22d3ee';
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.life -= 0.02; // Fade out speed
+                
+                if (p.life <= 0) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
     </script>
 </body>
 </html>
