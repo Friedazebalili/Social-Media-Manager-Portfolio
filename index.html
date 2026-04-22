@@ -313,6 +313,7 @@
                 <div class="absolute inset-0 bg-gray-950/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                 <img src="https://raw.githubusercontent.com/Friedazebalili/smm/1f5247630c22afc41d4b281ee3ec55c6e10ae239/images/10.png" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700 relative z-0" alt="Work 10">
             </div>
+
             <div class="gallery-item group aspect-square bg-gray-900 rounded-[2rem] overflow-hidden border border-white/5 relative cursor-pointer" data-category="logo" onclick="openLightbox('https://raw.githubusercontent.com/Friedazebalili/smm/1f5247630c22afc41d4b281ee3ec55c6e10ae239/images/2.png', event)">
                 <div class="absolute inset-0 bg-gray-950/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                 <img src="https://raw.githubusercontent.com/Friedazebalili/smm/1f5247630c22afc41d4b281ee3ec55c6e10ae239/images/2.png" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700 relative z-0" alt="Work 2">
@@ -325,6 +326,7 @@
                 <div class="absolute inset-0 bg-gray-950/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                 <img src="https://raw.githubusercontent.com/Friedazebalili/smm/1f5247630c22afc41d4b281ee3ec55c6e10ae239/images/8.png" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700 relative z-0" alt="Work 8">
             </div>
+
             <div class="gallery-item group aspect-square bg-gray-900 rounded-[2rem] overflow-hidden border border-white/5 relative cursor-pointer" data-category="automation" onclick="openLightbox('https://raw.githubusercontent.com/Friedazebalili/smm/1f5247630c22afc41d4b281ee3ec55c6e10ae239/images/3.png', event)">
                 <div class="absolute inset-0 bg-gray-950/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                 <img src="https://raw.githubusercontent.com/Friedazebalili/smm/1f5247630c22afc41d4b281ee3ec55c6e10ae239/images/3.png" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700 relative z-0" alt="Work 3">
@@ -338,42 +340,8 @@
                 <img src="https://raw.githubusercontent.com/Friedazebalili/smm/1f5247630c22afc41d4b281ee3ec55c6e10ae239/images/9.png" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700 relative z-0" alt="Work 9">
             </div>
         </div>
-
-        <div id="view-more-container" class="mt-12 flex justify-center w-full" style="display: none;">
-            <button onclick="showMoreItems()" class="bg-gray-900 border border-white/5 px-8 py-3 rounded-xl text-sm font-normal text-gray-400 hover:text-white hover:border-white/20 hover:bg-gray-800 transition-all shadow-lg">
-                View More
-            </button>
-        </div>
-
     </div>
 </section>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const items = document.querySelectorAll('#gallery-grid .gallery-item');
-        const viewMoreContainer = document.getElementById('view-more-container');
-        const limit = 10;
-
-        // If there are more than 10 items, hide the excess and show the button
-        if (items.length > limit) {
-            for (let i = limit; i < items.length; i++) {
-                items[i].classList.add('hidden', 'excess-item');
-            }
-            viewMoreContainer.style.display = 'flex';
-        }
-    });
-
-    function showMoreItems() {
-        // Find all hidden excess items and display them
-        const excessItems = document.querySelectorAll('.excess-item');
-        excessItems.forEach(item => {
-            item.classList.remove('hidden');
-        });
-        
-        // Hide the view more button once clicked
-        document.getElementById('view-more-container').style.display = 'none';
-    }
-</script>
 
 <script>
     function filterGallery(category, btn) {
